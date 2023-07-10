@@ -1,0 +1,32 @@
+name: Hello World Workflow
+
+# events on which the workflow should be triggered
+on:
+    # triggers on any push on main branch
+    push:
+        branches:
+            - main
+    # triggers on any pull request on main branch
+    pull_request:
+        branches:
+            - main
+    # gives a button to manually trigger workflow
+    workflow_dispatch:
+
+# series of steps the workflow needs to run
+jobs:
+    hello:
+        # runner - the os/system where the workflow runs - Github Hosted Runner
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: hello world
+              run: echo "Hello World"
+              shell: bash
+    
+    bye:
+        runs-on: ubuntu-latest
+        steps:
+            - name: goodbye hello world
+              run: echo "Goodbye Hello World"
+              shell: bash 
