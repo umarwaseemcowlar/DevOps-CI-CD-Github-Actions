@@ -15,3 +15,4 @@ jobs:
           body: |
             Thanks for spotting out and creating an issue
           reactions: "+1"
+          token: ${{ secrets.AUTHTOKEN }}
